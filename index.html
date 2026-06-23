@@ -13,12 +13,18 @@
     <section class="hero-section">
         <nav class="nav-bar">
             <h2>Jesulolami O.O</h2>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-            </ul>
-            <button onclick="location.href='#contact'">Contact Me</button>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                </ul>
+                <button onclick="location.href='#contact'">Contact Me</button>
+            </div>
+            <!-- Add this hamburger icon -->
+            <div class="hamburger">
+                <div class="line"></div><div class="line"></div><div class="line"></div>
+            </div>
         </nav>
 
         <div class="hero-section-div">
@@ -191,7 +197,7 @@
     </div>
 
     <!-- RESUME -->
-    <div class="timeline">
+    <div class="timeline" id="resume">
 
         <h2>My Professional & Academic Timeline</h2>
         <ul class="timeline-container">
@@ -277,8 +283,8 @@
                 <div class="dark-overlay"></div>
                 <div class="hover-content">
                     <h4>Fintech Interface Clone</h4>
-                    <p>HTML, CSS & Layout Precision</p>
-                    <button class="explore-btn"><a href="#">Explore</a></button>
+                    <p>HTML, CSS & Bootstrap</p>
+                    <button class="explore-btn"><a href="https://cowrywise-clone-delta.vercel.app/" target="_blank" rel="noopener noreferrer">Explore</a></button>
                 </div>
             </div>
 
@@ -288,7 +294,7 @@
                 <div class="hover-content">
                     <h4>Responsive Platform Mirror</h4>
                     <p>Bootstrap & Fluid Styling</p>
-                    <button class="explore-btn"><a href="#">Explore</a></button>
+                    <button class="explore-btn"><a href="https://palmpay-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">Explore</a></button>
                 </div>
             </div>
 
@@ -303,12 +309,12 @@
             </div>
 
             <div class="card-item">
-                <img src="./images/webdev-clone.png" alt="PalmPay Layout Project">
+                <img src="./images/webdev-clone.png" alt="WebDev Project">
                 <div class="dark-overlay"></div>
                 <div class="hover-content">
                     <h4>Responsive Platform Mirror</h4>
-                    <p>Bootstrap & Fluid Styling</p>
-                    <button class="explore-btn"><a href="#">Explore</a></button>
+                    <p>HTML, CSS & Layout Precision</p>
+                    <button class="explore-btn"><a href="https://web-dev-clone-beta.vercel.app/" target="_blank" rel="noopener noreferrer">Explore</a></button>
                 </div>
             </div>
 
@@ -318,7 +324,7 @@
                 <div class="hover-content">
                     <h4>Responsive Platform Mirror</h4>
                     <p>Bootstrap & Fluid Styling</p>
-                    <button class="explore-btn"><a href="#">Explore</a></button>
+                    <button class="explore-btn"><a href="https://netflix-clone-page-iota.vercel.app/" target="_blank" rel="noopener noreferrer">Explore</a></button>
                 </div>
             </div>
         </div>
@@ -373,4 +379,16 @@
     </div>
 </body>
 
+<!-- 
+    Add this script tag before your closing </body> tag.
+    This JavaScript will make the hamburger menu functional.
+-->
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 </html>

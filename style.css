@@ -16,7 +16,7 @@ body {
 
 .nav-bar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between; /* Changed for better alignment */
     padding: 20px 0px;
     align-items: center;
     position: absolute;
@@ -25,6 +25,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     z-index: 100;
+    padding: 20px 5%; /* Added padding for spacing */
 }
 
 .nav-bar h2 {
@@ -34,7 +35,14 @@ body {
     font-weight: 800;
 }
 
-.nav-bar ul {
+/* Wrapper for nav links and button */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links ul {
     display: flex;
     gap: 30px;
 }
@@ -71,6 +79,21 @@ body {
     background-color: #64FFDA;
     color: #0A192F;
     transform: translateY(-2px);
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
 }
 
 /* HERO SECTION */
@@ -155,17 +178,17 @@ body {
 
     0%,
     33.33% {
-        content: "Networking & Cloud Labs";
+        content: "DevOps Engineer in Training";
     }
 
     33.34%,
     66.66% {
-        content: "Systems Infrastructure";
+        content: "Cloud and Automation Enthusiast";
     }
 
     66.67%,
     100% {
-        content: "Front-End Implementations";
+        content: "Future Cloud Automation Engineer";
     }
 }
 
@@ -368,10 +391,10 @@ body {
 
 /* SKILLS SECTION */
 .skills-showcase {
-    margin-top: -250px;
+    margin-top: 50px; /* Removed negative margin for better flow */
     /* padding-top: 40px; */
     /* border-top: 1px solid #E2E8F0; */
-    margin-left: 440px;
+    /* margin-left: 440px; */ /* Removed fixed margin */
 }
 
 .section-tag h3 {
@@ -606,6 +629,7 @@ body {
     .timeline-card.left-card,
     .timeline-card.right-card {
         grid-column: 2;
+        margin-top: 0 !important; /* Remove stagger on mobile */
         margin-inline: 24px;
     }
 
@@ -639,7 +663,7 @@ body {
     }
 }
 
-/* PORTFOLIO HOVER SYSTEM (Craftivo-Style) */
+/* PORTFOLIO HOVER SYSTEM */
 .portfolio-section {
     padding: 100px 10%;
     background: #ffffff;
@@ -936,6 +960,10 @@ textarea { height: 120px; resize: none; }
     background: transparent !important;
 }
 
+/* ==========================================
+   GENERAL RESPONSIVENESS
+   ========================================== */
+
 /* Responsive Scaling for Smaller viewports */
 @media (max-width: 768px) {
     .timeline {
@@ -952,5 +980,120 @@ textarea { height: 120px; resize: none; }
     }
     .timeline-card::after {
         left: -31px;
+    }
+
+    /* --- NAVBAR --- */
+    .nav-bar {
+        padding: 20px 5%;
+    }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        background-color: #0A192F;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: right 0.4s ease-in-out;
+        z-index: 200;
+    }
+    .nav-links.active {
+        right: 0; /* Slide in */
+    }
+    .nav-links ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hamburger {
+        display: flex;
+        z-index: 201; /* Ensure it's above the nav links */
+    }
+
+    /* --- HERO SECTION --- */
+    .hero-section-div h1 {
+        font-size: 36px;
+    }
+    .hero-section-div p {
+        font-size: 20px;
+    }
+
+    /* --- ABOUT SECTION --- */
+    .about {
+        padding: 80px 5%;
+    }
+    .profile-section {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+    }
+    .profile-card {
+        max-width: 100%; /* Allow card to fill width */
+        width: 100%;
+    }
+    .bio {
+        margin-top: 40px;
+    }
+    .bio h2 {
+        font-size: 28px;
+    }
+    .details-grid {
+        grid-template-columns: 1fr; /* Stack details on mobile */
+    }
+    .skills-showcase {
+        margin-top: 40px;
+    }
+
+    /* --- PORTFOLIO --- */
+    .portfolio-section {
+        padding: 80px 5%;
+    }
+    .portfolio-card {
+        grid-template-columns: 1fr; /* Stack portfolio items into a single column */
+    }
+
+    /* --- CONTACT --- */
+    #contact {
+        padding: 80px 5%;
+    }
+    .contact-me {
+        flex-direction: column;
+    }
+    .formmail {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Tablet adjustments */
+    .about {
+        padding: 100px 5%;
+    }
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-card {
+        max-width: 500px;
+        width: 100%;
+    }
+    .bio {
+        margin-top: 40px;
+    }
+    .skills-showcase {
+        margin-top: 40px;
+    }
+    .portfolio-section {
+        padding: 100px 5%;
+    }
+    .portfolio-card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    .timeline {
+        padding: 100px 5%;
     }
 }
