@@ -1097,3 +1097,17 @@ textarea { height: 120px; resize: none; }
         padding: 100px 5%;
     }
 }
+
+@media (min-width: 1025px) {
+    .skills-showcase{
+    margin-left: 440px;
+    margin-top: -240px;
+    }
+}
+
+@media (min-width: 2500px) {
+    .skills-showcase{
+    margin-left: 440px;
+    margin-top: -320px;
+    }
+}
