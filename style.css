@@ -425,6 +425,12 @@ body {
     height: 15px;
     background-color: #14B8A6;
     border-radius: 10px;
+    animation: loadProgress 3.5s ease-out forwards;
+}
+
+@keyframes loadProgress {
+  from { width: 0%; }
+  /* The animation will scale up to whatever width you assigned in the HTML inline style */
 }
 
 .skills {
