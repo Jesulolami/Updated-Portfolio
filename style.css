@@ -425,7 +425,7 @@ body {
     height: 15px;
     background-color: #14B8A6;
     border-radius: 10px;
-    animation: loadProgress 3.5s ease-out forwards;
+    animation: loadProgress 12.5s ease-out forwards;
 }
 
 @keyframes loadProgress {
